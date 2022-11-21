@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package buffalo.brick.v1;
+
+import "google/type/datetime.proto";
+
+// BrickService provides RPCs for the exchange of buffalo bricks.
+service BrickService {
+  // Bake a buffalo brick for the taking.
+  rpc Bake(BakeRequest) returns (BakeResponse) {}
+  // Take an available buffalo bricks.
+  rpc Take(TakeRequest) returns (TakeResponse) {}
+}
+
+// Brick defines a brick baked by a buffalo.
+message Brick {
+  string id = 1;
+  google.type.DateTime baked_at = 2;
+  repeated string aspects = 3;
+
+}
+
+message BakeRequest {
+  Brick brick = 1;
+}
+
+message BakeResponse {
+  int32 baked = 1;
+}
+
+message TakeRequest {}
+
+message TakeResponse {
+  Brick brick = 1;
+}
+
+
+
