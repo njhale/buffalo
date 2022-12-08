@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@buf/bufbuild_connect-web_nhale_buffalo": "^1.11.2",
+    "@buf/nhale_buffalo.bufbuild_connect-web": "^0.3.1-20221122193148-a113ccf995b8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
