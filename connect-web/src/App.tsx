@@ -1,6 +1,17 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import {
+  createConnectTransport,
+  createPromiseClient,
+} from "@bufbuild/connect-web";
+import { VariableService } from "@buf/nhale_buffalo.bufbuild_connect-web";
+
+const transport = createConnectTransport({
+  baseUrl: "http://localhost:8080",
+});
+
+const client = createPromiseClient(VariableService, transport);
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,5 +41,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App

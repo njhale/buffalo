@@ -1,7 +1,7 @@
 version: v1
-name: bufbuild.internal/nhale/buffalo
+name: buf.build/nhale/buffalo
 deps:
-  - bufbuild.internal/local/googleapis
+  - buf.build/googleapis/googleapis
 breaking:
   use:
     - FILE

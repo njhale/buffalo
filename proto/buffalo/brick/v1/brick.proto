@@ -3,6 +3,8 @@ syntax = "proto3";
 package buffalo.brick.v1;
 
 import "google/type/datetime.proto";
+import "google/protobuf/struct.proto";
+import "k8s.io/api/core/v1/generated.proto";
 
 // BrickService provides RPCs for the exchange of buffalo bricks.
 service BrickService {
@@ -32,6 +34,17 @@ message TakeRequest {}
 
 message TakeResponse {
   Brick brick = 1;
+}
+
+message SetVariablesRequest {
+  google.protobuf.Struct variables = 1;
+}
+
+message SetVariablesResponse {
+}
+
+service VariableService {
+  rpc SetVariables(SetVariablesRequest) returns (SetVariablesResponse) {}
 }
 
 
